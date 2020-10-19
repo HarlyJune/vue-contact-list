@@ -1,12 +1,28 @@
+<script>
+  import './main'
+  export default {
+    name: "App",
+    data: function() {
+      return {
+        contacts : this.$api.getContacts()
+      };
+    },
+    methods: {
+
+    }
+  };
+</script>
+
+
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">List</router-link> |
-      <router-link to="/contact">Contact</router-link>
     </div>
-    <router-view/>
+    <router-view v-bind:contacts= "contacts" />
   </div>
 </template>
+
+
 
 <style>
 #app {

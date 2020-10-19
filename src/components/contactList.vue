@@ -1,30 +1,42 @@
 <template>
   <div>
     <button>Add contact</button>
-    <div>
-      <ul>
-        <Contact />
-        <!-- c помощью v-for итерирую массив данных и передаю его в компонент contact через v-bind 
+    <div class="container">
+        <Contact
+            v-for="contact in contacts"
+            :key="contact.id"
+            :contact="contact"
+            @click.native="goToContactView(contact)"
+        />
+        <!-- c помощью v-for итерирую массив данных и передаю его в компонент contact через v-bind
          (key обязателен, т.к. без него компилятор ругается)-->
-      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import Contact from "@/components/contact";
+import contact from "./contactShort";
 export default {
-  props: ["contacts"],
-  components: {
-    Contact,
-  },
+    props: ["contacts"],
+    components: {
+      Contact: contact,
+    },
+    methods: {
+        goToContactView(contact){
+            console.log("go")
+            this.$router.push({
+                name: 'Contact',
+                params: { contact : contact }
+            });
+        }
+    }
 };
 </script>
 
-<style scoped>
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+<style >
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
 </style>
