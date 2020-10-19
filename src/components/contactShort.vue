@@ -1,5 +1,6 @@
 <template>
   <div>
+
     {{contact.name}} {{contact.surname}}
   </div>
 </template>

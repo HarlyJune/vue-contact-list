@@ -13,16 +13,11 @@
   };
 </script>
 
-
 <template>
   <div id="app">
-    <div id="nav">
-    </div>
-    <router-view v-bind:contacts= "contacts" />
+    <router-view v-bind:contacts = 'contacts'/>
   </div>
 </template>
-
-
 
 <style>
 #app {

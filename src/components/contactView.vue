@@ -3,7 +3,7 @@
         <div v-for="key in Object.keys(contact)"
              :key="key"
              class="row"
-             >
+        >
             {{key}} : {{contact[key]}}
         </div>
 
