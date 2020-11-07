@@ -11,7 +11,7 @@ const routes = [
     component: ContactList,
   },
   {
-    path: '/contact',
+    path: '/contact/',
     name: 'Contact',
     props : true, // params as props
     // route level code-splitting

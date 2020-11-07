@@ -1,3 +1,9 @@
+<script>
+    export default ({
+        props: ["contact"]
+    })
+</script>
+
 <template>
     <div>
         <div v-for="key in Object.keys(contact)"
@@ -5,18 +11,11 @@
              class="row"
         >
             {{key}} : {{contact[key]}}
+
         </div>
 
     </div>
 </template>
-
-<script>
-    export default ({
-        props: ["contact"]
-    })
-</script>
-
-
 
 <style scoped>
     .row{

@@ -64,7 +64,8 @@ const data = {
         {id: "1", name:"Andro", surname: "Alsbo", phone: "5553535"},
         {id: "2", name:"Petro", surname: "Alsbo", phone: "6663636"},
     ]
-}
+};
+
 export default {
 
     getContacts(){

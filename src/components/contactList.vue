@@ -1,25 +1,13 @@
-<template>
-  <div>
-    <button>Add contact</button>
-    <div class="container">
-        <Contact
-            v-for="contact in contacts"
-            :key="contact.id"
-            :contact="contact"
-            @click.native="goToContactView(contact)"
-        />
-        <!-- c помощью v-for итерирую массив данных и передаю его в компонент contact через v-bind
-         (key обязателен, т.к. без него компилятор ругается)-->
-    </div>
-  </div>
-</template>
-
 <script>
+import delButton from "./delButton";
 import contact from "./contactShort";
 export default {
     props: ["contacts"],
+    mounted: function(){
+    },
     components: {
       Contact: contact,
+      DelButton: delButton,
     },
     methods: {
         goToContactView(contact){
@@ -32,6 +20,23 @@ export default {
     }
 };
 </script>
+
+<template>
+    <div>
+        <button>Add contact</button>
+        <div  v-for="contact in contacts"
+              :key="contact.id"
+              class="container">
+            <Contact
+                    :contact="contact"
+                    @click.native="goToContactView(contact)"
+            />
+            <DelButton  :id="contact.id" />
+            <!-- c помощью v-for итерирую массив данных и передаю его в компонент contact через v-bind
+             (key обязателен, т.к. без него компилятор ругается)-->
+        </div>
+    </div>
+</template>
 
 <style >
   .container{

@@ -1,10 +1,3 @@
-<template>
-  <div>
-
-    {{contact.name}} {{contact.surname}}
-  </div>
-</template>
-
 <script>
 
 export default ({
@@ -12,7 +5,11 @@ export default ({
 })
 </script>
 
-
+<template>
+  <div>
+    {{contact.name}} {{contact.surname}}
+  </div>
+</template>
 
 <style scoped>
 div{
